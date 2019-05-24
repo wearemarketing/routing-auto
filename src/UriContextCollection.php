@@ -141,7 +141,7 @@ class UriContextCollection
         foreach ($this->uriContexts as $uriContext) {
             $autoRoute = $uriContext->getAutoRoute();
 
-            if (null !== $autoRoute && $uri === $uriContext->getUri() && $autoRoute->getLocale() == $uriContext->getLocale()) {
+            if (null !== $autoRoute && $uri === $uriContext->getUri() && $this->getSubject()->getLocale() == $uriContext->getLocale()) {
                 return $autoRoute;
             }
         }
